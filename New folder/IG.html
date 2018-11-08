@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Gallery</title>
+    <meta charset="utf-8" />
+    <style>
+      * {
+       box-sizing: border-box;
+      }
+      .al{
+       width: 100%;
+       margin: 5px;
+      }
+      .no-float {
+       clear: both;
+      }
+      h3 {
+        color: white;
+        font-size: 26px;
+      }
+      p {
+        color: white;
+        font-size: 20px;
+      }
+      .icmenu {
+        width: 32px;
+        float: left;
+      }
+      .glr img {
+        float: left;
+        max-width: 33.333333%;
+      }
+      .glr img:hover {
+        transform:scale(1);
+        -webkit-filter:blur(3px);
+        border-radius: 10%;
+      }
+    </style>
+  </head>
+  <body bgcolor="#272b2b">
+    <div class="al">
+      <img src="../img/icon menu1.png" class="icmenu"><h3>MENU</h3>
+      <img src="../img/banner1.jpg" width="100%" id="banner">
+
+      <p><b>Album Gallery</b></p>
+    
+      <div class="glr g1"><img src="../img/gallery1.jpg"></div>
+      <div class="glr g2"><img src="../img/gallery2.jpg"></div>
+      <div class="glr g3"><img src="../img/gallery3.jpg"></div>
+      <div class="glr g4"><img src="../img/gallery4.jpg"></div>
+      <div class="glr g5"><img src="../img/gallery5.jpg"></div>
+      <div class="glr g6"><img src="../img/gallery6.jpg"></div>
+      <div class="glr g7"><img src="../img/gallery7.jpg"></div>
+      <div class="glr g8"><img src="../img/gallery8.jpg"></div>
+      <div class="glr g9"><img src="../img/gallery9.jpg"></div>
+      <div class="glr g10"><img src="../img/gallery10.jpg"></div>
+      <div class="glr g11"><img src="../img/gallery11.jpg"></div>
+      <div class="glr g12"><img src="../img/gallery12.jpg"></div>
+
+    </div>
+  </body>
+</html>
