@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display</title>
+    <meta charset="utf-8" />
+    <style>
+      * {
+       box-sizing: border-box;
+      }
+      .al{
+       width: 100%;
+       margin: 0px;
+       display: block;
+       position: relative;
+      }
+      h3 {
+        font-size: 26px;
+        margin-top: -18px;
+      }
+      .main-menu {
+        position: relative;
+        display: block;
+      }
+      ul {
+        background: #f3f19d;
+        width: 270px;
+        padding: 0;
+        list-style-type: none;
+        text-align: left;
+      }
+      li {
+        width: auto;
+        height: 36px;
+        line-height: 40px;
+        border-bottom: 1px solid #262320;
+        padding: 0 1em;
+      }
+      .m1 {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-size: 18px;
+        text-align: bold;
+      }
+      .b1 img {
+        width: 970px;
+        position: absolute;
+        left: 280px;
+        right: 0;
+      }
+      .no-float {
+        clear: both;
+      }
+      .glr img {
+        width: 415px;
+        margin-top: 40px;
+        display: block;
+      }
+
+      .glr img:hover {
+        transform:scale(1);
+        -webkit-filter:blur(3px);
+        border-radius: 10%;
+      }
+      #btt {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 1000;
+      }
+      .gall {
+        display: block;
+        position: relative;
+      }
+      #gall1 {
+        display: block;
+        position: relative;
+      }
+      #gall1 img {
+        position: absolute;
+        top: 260px;
+      }
+      .g2 img {
+        left: 415px;
+      }
+      .g3 img {
+        left: 830px;
+      }
+      #gall2 {
+        display: block;
+        position: relative;
+      }
+      #gall2 img {
+        position: absolute;
+        top: 630px;
+      }
+      .g5 img {
+        left: 415px;
+      }
+      .g6 img {
+        left: 830px;
+      }
+      #gall3 {
+        display: block;
+        position: relative;
+      }
+      #gall3 img {
+        position: absolute;
+        top: 1000px;
+      }
+      .g8 img {
+        left: 415px;
+      }
+      .g9 img {
+        left: 830px;
+      }
+      #gall4 {
+        display: block;
+        position: relative;
+      }
+      #gall4 img {
+        position: absolute;
+        top: 1370px;
+      }
+      .g11 img {
+        left: 415px;
+      }
+      .g12 img {
+        left: 830px;
+      }
+      .chu {
+        position: absolute;
+        color: white;
+        text-align: bold;
+        font-size: 18px;
+      }
+      #chu1 {
+        top: 280px;
+        left: 10px;
+      }
+      #chu2 {
+        top: 650px;
+        left: 10px;
+      }
+      #chu3 {
+        top: 1020px;
+        left: 10px;
+      }
+      #chu4 {
+        top: 1390px;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body bgcolor="#272b2b">
+    <div class="al">
+      <div class="main-menu">
+      <div class="m1">
+        <ul>
+        <li><h3 id="menu"><b>MENU</b></h3></li>
+        <li>PRODUCTS</li>
+        <li>ALBUM</li>
+        <li>DECOR</li>
+        <li>TREKKING</li>
+        <li>ABOUT</li>
+        <li>CONTACT US</li>
+        </ul>
+      </div>
+      <div class="b1"><img src="../img/banner1.jpg" width="100%" id="banner" alt="banner" title="banner"></div>
+      </div>
+      <div class="gall">
+      <div id="gall1">
+      <div class="chu" id="chu1"><a>ALBUM MOUNTAINT FOREST</a></div>
+      <div class="glr g1"><img src="../img/gallery1.jpg" alt="anh1" title="anh1"></div>
+      <div class="glr g2"><img src="../img/gallery2.jpg" alt="anh2" title="anh2"></div>
+      <div class="glr g3"><img src="../img/gallery3.jpg" alt="anh3" title="anh3"></div>
+      </div>
+      <div id="gall2">
+      <div class="chu" id="chu2"><a>ANIMAL OF MOUNTAINT</a></div>
+      <div class="glr g4"><img src="../img/gallery4.jpg" alt="anh4" title="anh4"></div>
+      <div class="glr g5"><img src="../img/gallery5.jpg" alt="anh5" title="anh5"></div>
+      <div class="glr g6"><img src="../img/gallery6.jpg" alt="anh6" title="anh6"></div>
+      </div>
+      <div id="gall3">
+      <div class="chu" id="chu3"><a>TREKKING</a></div>
+      <div class="glr g7"><img src="../img/gallery7.jpg" alt="anh7" title="anh7"></div>
+      <div class="glr g8"><img src="../img/gallery8.jpg" alt="anh8" title="anh8"></div>
+      <div class="glr g9"><img src="../img/gallery9.jpg" alt="anh9" title="anh9"></div>
+      </div>
+      <div id="gall4">
+      <div class="chu" id="chu4"><a>FINAL</a></div>
+      <div class="glr g10"><img src="../img/gallery10.jpg" alt="anh10" title="anh10"></div>
+      <div class="glr g11"><img src="../img/gallery11.jpg" alt="anh11" title="anh11"></div>
+      <div class="glr g12"><img src="../img/gallery12.jpg" alt="anh12" title="anh12"></div>
+      </div>
+      </div>
+      </div>
+
+      <div id="btt"><a href="#menu"><img src="../img/btt.png" width="60px" alt="Back To Top" title="Back To Top"></a></div>
+
+    </div>
+  </body>
+</html>
