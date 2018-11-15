@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display</title>
+    <meta charset="utf-8" />
+    <style>
+      * {
+       box-sizing: border-box;
+      }
+
+      body {
+        background-color: #e5e5e5
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      img {
+        max-width: 100%;
+        vertical-align: middle;
+      }
+
+      .wrap {
+        max-width: 1000px
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #main-menu {
+        background-color: #ffffff;
+        text-align: center;
+        padding: auto;
+        margin-top: -35px;
+        float: left;
+        position: absolute;
+      }
+
+      #main-menu li {
+        padding: 5px;
+        font-size: 18px;
+        color: #737373;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 20px;
+      }
+
+      li {
+        line-height: 23px;
+        border-bottom: 1px solid #262320;
+      }
+
+      #banner {
+        float: right;
+        width: 85%;
+        border-bottom: 1px solid #dddddd;
+      }
+
+      #main-content {
+        margin: 10px;
+        min-height: 250px;
+      }
+
+      .col {
+        padding: 10px;
+        float: left;
+        width: 33.3333333333%;
+      }
+
+      .thumb {
+        padding: 4px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        transition: all 1s ease;
+      }
+
+      .thumb img  {
+        opacity: 1;
+      }
+
+      .thumb:hover {
+        opacity: 0.5;
+        transform: translate(0, -5px);
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      #footer {
+        clear: both;
+        padding: 30px 0;
+        text-align: center;
+      }
+
+      #footer {
+        margin: 0;
+        padding: 30px 0 15px 0;
+        border-top: 1px solid #c5c5c5;
+      }
+
+      #btt {
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <audio autoplay>
+      <source src="../audio/that-girl.mp3" type="audio/mpeg">
+    </audio>
+    <div class="wrap">
+
+      <div id="main-menu">
+        <ul>
+        <li><h3>MENU</h3></li>
+        <li>PRODUCTS</li>
+        <li>ALBUM</li>
+        <li>DECOR</li>
+        <li>TREKKING</li>
+        <li>ABOUT</li>
+        <li>CONTACT US</li>
+        </ul>
+      </div>
+
+      <div id="banner">
+        <img src="../img/banner1.jpg" alt="banner" title="banner"></div>
+      </div>
+
+      <h1>Mountaint Image</h1>
+
+      <div id="main-content">
+        <div class="col">
+          <div class="thumb">
+            <img src="../img/gallery1.jpg" alt="anh1" title="anh1">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <img src="../img/gallery2.jpg" alt="anh2" title="anh2">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <img src="../img/gallery3.jpg" alt="anh3" title="anh3">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <img src="../img/gallery4.jpg" alt="anh4" title="anh4">
+          </div>
+        </div>
+
+
+        <div class="col">
+          <div class="thumb">
+            <img src="../img/gallery5.jpg" alt="anh5" title="anh5">
+          </div>
+        </div>
+
+
+        <div class="col">
+          <div class="thumb">
+            <img src="../img/gallery6.jpg" alt="anh6" title="anh6">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <img src="../img/gallery7.jpg" alt="anh7" title="anh7">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <img src="../img/gallery8.jpg" alt="anh8" title="anh8">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <img src="../img/gallery9.jpg" alt="anh9" title="anh9">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <img src="../img/gallery10.jpg" alt="anh10" title="anh10">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <img src="../img/gallery11.jpg" alt="anh11" title="anh11">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <img src="../img/gallery12.jpg" alt="anh12" title="anh12">
+          </div>
+        </div>
+      </div>
+
+      <div id="footer">
+        <p>Copyright &copy; 2018</p>
+      </div>
+
+      <div id="btt"><a href="#main-menu"><img src="../img/btt.png" width="60px" alt="Back To Top" title="Back To Top"></a></div>
+
+    </div>
+  </body>
+</html>

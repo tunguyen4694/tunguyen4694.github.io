@@ -65,54 +65,21 @@
         top: 150px;
       }
 
-      .anh1 img {
-        animation-name: lr;
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
-      }
-      
       .anh2 {
         width: 160px;
         position: absolute;
         right: 0px;
         top: 150px;
       }
-
-      .anh2 img{
-        animation-name: rl;
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
-      }
   
-      @keyframes fade {
+       @keyframes fade {
         50% {
             opacity: 0.02;
           }
-      }
-
-      @keyframes lr {
-        
-        25% {opacity: 0.02; transform: translateX(300px);}
-        50% {opacity: 1; transform: translateX(800px);}
-        75% {opacity: 0.02; transform: translateX(500px);}
-        100% {opacity: 1; transform: translateX(0);}
-      }
-
-      @keyframes rl {
-        
-        25% {opacity: 0.02; transform: translateX(-300px);}
-        50% {opacity: 1; transform: translateX(-800px);}
-        75% {opacity: 0.02; transform: translateX(-500px);}
-        100% {opacity: 1; transform: translateX(0);}
-      }
 
     </style>
   </head>
   <body>
-    <audio autoplay>
-      <source src="../audio/that-girl.mp3" type="audio/mpeg">
-    </audio>
-
     <div class="wrap">
       <div class="thumb">
         <img src="../img/thiep8-3.jpg">

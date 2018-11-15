@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Diễn đàn Bạc Liêu</title>
+<META HTTP-EQUIV="refresh" content="300;URL=./diendan/forum.php">
+        <style>
+            body{
+                overflow:hidden;    font-family:Arial,Helvetica,sans-serif;
+            }
+            #logo{
+                position:relative;    width:950px;
+                margin-top:30px;
+            }
+            .particle{
+                position:absolute;    z-index:-1;
+            }
+            .circle{
+                -moz-border-radius:160px;
+                -webkit-border-radius:160px;
+                -khtml-border-radius:160px;
+                border-radius:160px;
+            }
+        </style>
+    </head>
+    <body>
+<br><br>
+        <center>
+            <a><font color=black size="7">Wellcome to</font> 
+            <div id=logo></div>
+        </center>
+
+
+    </body>
+    <script>
+        try{
+            // DEFINE SOME VALUE
+            var maxMove=200,mouseX=-200,mouseY=-200,
+                time=35,timer,listBall=[],logoElement,isIE,
+                
+                // cac bien phuc vu cho viec: drag/resize window -> cac qua bong bi lac lu
+                bodyX,bodyY,bodyW,differenceBodyX=0,differenceBodyY=0,differenceBodyW=0;
+
+            // DEFINE SOME FUNCTION    
+            var init=function(){
+                if(logoElement=document.getElementById("logo")){
+                
+                    // đăng ký sự kiện mousemove
+                    document.addEventListener?
+                        document.addEventListener('mousemove',updateMousePosition,false):
+                        document.attachEvent('onmousemove',updateMousePosition);
+                        
+                    // bắt đầu tạo ra các quả bóng
+                    initBall();
+                }
+            },
+            updateMousePosition=function(event){
+                // khi di chuyển chuột thì sẽ thiết đặt lại maxMove = 200 ngay lập tức
+                // còn khi không di chuyển thì maxmove sẽ tự động giảm dần (--2) để tạo hiệu ứng gia tốc
+                maxMove=200;
+                
+                // set lại giá trị cho mouse X, Y
+                mouseX=event.clientX-logoElement.offsetLeft;
+                mouseY=event.clientY-logoElement.offsetTop;
+            },
+            getBodyPosition=function(){
+                return [
+                    isIE?window.screenLeft:window.screenX,
+                    isIE?window.screenTop:window.screenY,
+                    document.body.clientWidth];
+            },
+            initBall=function(){
+                isIE = window.navigator.userAgent.indexOf("MSIE")!=-1? true:false;
+                
+                // Ve chu Dien Dan Bac Lieu
+                listBall=[
+                    //D
+                    //D1
+                    createBall(5,0,10,"1dca8f"),        createBall(6,20,9,"1dca8f"),        createBall(7,40,8,"1dca8f"),
+                    createBall(8,60,7,"1dca8f"),         createBall(7,80,6,"1dca8f"),      createBall(8,100,5,"1dca8f"),
+                    createBall(9,120,4,"1dca8f"),    
+                    //D2
+                    createBall(30,0,10,"1dca8f"),    createBall(50,20,9,"1dca8f"),
+                    createBall(60,40,8,"1dca8f"),    createBall(60,60,7,"1dca8f"),    createBall(60,80,6,"1dca8f"),
+                    createBall(50,100,4,"1dca8f"),    createBall(32,118,3,"1dca8f"),    
+                    //i
+                    createBall(95,60,5,"b60e4d"),     createBall(93,80,6,"b60e4d"),      createBall(92,100,7,"b60e4d"),
+                    createBall(90,120,8,"b60e4d"),
+                    //E
+                    createBall(120,60,9,"f37d1e"),     createBall(120,80,8,"f37d1e"),      createBall(120,100,7,"f37d1e"),
+                    createBall(120,124,6,"f37d1e"),
+                    createBall(140,60,8,"f37d1e"),     createBall(140,90,5,"f37d1e"),    createBall(140,126,5,"f37d1e"),
+                    //N
+                    createBall(170,60,8,"2cadf7"),     createBall(170,80,7,"2cadf7"),      createBall(172,100,6,"2cadf7"),
+                    createBall(170,120,6,"2cadf7"),       createBall(190,60,6,"2cadf7"),
+                    createBall(210,60,6,"2cadf7"),     createBall(210,80,5,"2cadf7"),      createBall(211,100,4,"2cadf7"),
+                    createBall(212,124,3,"2cadf7"),
+                    //D
+                    //D1
+                    createBall(261,0,10,"f21010"),    createBall(262,20,9,"f21010"),    createBall(263,40,8,"f21010"),
+                    createBall(264,60,7,"f21010"),         createBall(265,80,6,"f21010"),      createBall(265,100,5,"f21010"),
+                    createBall(266,120,4,"f21010"),
+                    //D2
+                    createBall(285,0,9,"f21010"),    createBall(305,20,8,"f21010"),
+                    createBall(315,40,7,"f21010"),    createBall(318,60,6,"f21010"),    createBall(315,80,5,"f21010"),
+                    createBall(305,100,4,"f21010"),    createBall(287,118,3,"f21010"),    
+                    //A
+                    createBall(335,120,5,"4f7af2"),    createBall(345,90,7,"4f7af2"),    createBall(360,60,9,"4f7af2"),
+                    createBall(390,120,5,"4f7af2"),    createBall(382,90,7,"4f7af2"),    createBall(367,95,6,"4f7af2"),
+                    //N
+                    createBall(420,60,8,"24c928"),     createBall(420,80,7,"24c928"),      createBall(420,100,6,"24c928"),
+                    createBall(420,120,6,"24c928"),       createBall(440,60,6,"24c928"),
+                    createBall(460,60,6,"24c928"),     createBall(460,80,5,"24c928"),      createBall(460,100,4,"24c928"),
+                    createBall(464,124,3,"24c928"),
+                    //B
+                    createBall(506,0,4,"1dca8f"),        createBall(504,20,5,"1dca8f"),    createBall(504,40,6,"1dca8f"),
+                    createBall(502,60,7,"1dca8f"),     createBall(500,80,8,"1dca8f"),      createBall(500,100,9,"1dca8f"),
+                    createBall(500,120,10,"1dca8f"),
+                    //2
+                    createBall(522,0,4,"1dca8f"),        createBall(532,20,4,"1dca8f"),    createBall(532,40,5,"1dca8f"),
+                    createBall(520,60,6,"1dca8f"),    
+                    createBall(540,70,5,"1dca8f"),    createBall(545,80,6,"1dca8f"),         createBall(540,114,7,"1dca8f"),
+                    createBall(547,94,8,"1dca8f"),     createBall(520,120,9,"1dca8f"),
+                    //A
+                    createBall(570,120,8,"b60e4d"),    createBall(580,90,7,"b60e4d"),    createBall(595,60,6,"b60e4d"),
+                    createBall(625,120,8,"b60e4d"),    createBall(615,90,7,"b60e4d"),    createBall(600,95,5,"b60e4d"),
+                    //C
+                    createBall(650,60,5,"2cadf7"),     createBall(650,80,6,"2cadf7"),      createBall(650,100,7,"2cadf7"),
+                    createBall(650,120,8,"2cadf7"),    createBall(675,60,6,"2cadf7"),     createBall(675,120,9,"2cadf7"),
+                    //L
+                    createBall(725,0,4,"f21010"),    createBall(724,20,4,"f21010"),    createBall(723,40,5,"f21010"),
+                    createBall(722,60,6,"f21010"),     createBall(720,80,7,"f21010"),      createBall(720,100,8,"f21010"),
+                    createBall(720,120,9,"f21010"),    createBall(740,120,10,"f21010"),    createBall(765,120,9,"f21010"),
+                    //i
+                    createBall(795,60,5,"4f7af2"),     createBall(794,80,6,"4f7af2"),      createBall(793,100,7,"4f7af2"),
+                    createBall(792,120,8,"4f7af2"),
+                    //E
+                    createBall(824,60,5,"f37d1e"),     createBall(823,80,6,"f37d1e"),      createBall(822,100,7,"f37d1e"),
+                    createBall(821,120,8,"f37d1e"),
+                    createBall(845,60,5,"f37d1e"),     createBall(844,90,6,"f37d1e"),    createBall(843,120,7,"f37d1e"),
+                    //U
+                    createBall(874,60,5,"f52fd2"),     createBall(873,80,6,"f52fd2"),      createBall(872,100,7,"f52fd2"),
+                    createBall(871,120,8,"f52fd2"),       createBall(890,120,8,"f52fd2"),
+                    createBall(914,60,5,"f52fd2"),     createBall(913,80,6,"f52fd2"),      createBall(912,100,7,"f52fd2"),
+                    createBall(911,120,8,"f52fd2"),
+        
+                ];
+                
+                // lấy ra vị trí và độ rộng của body (window)
+                var temp=getBodyPosition();
+                bodyX=temp[0];    bodyY=temp[1];    bodyW=temp[2];
+                
+                // bắt đầu vẽ
+                draw();
+            },
+            draw=function(){
+                // lấy ra tọa độ hiện tại của window
+                var temp=getBodyPosition();
+                
+                //tính toán độ chênh lệch giữa tọa độ cũ và mới
+                differenceBodyX = temp[0]-bodyX;
+                differenceBodyY = temp[1]-bodyY;
+                differenceBodyW = temp[2]-bodyW;
+                
+                // update lại tọa độ window mới
+                bodyX=temp[0];    bodyY=temp[1];    bodyW=temp[2];
+
+                //
+                maxMove=Math.max(0,maxMove-2);
+                var stop = true,i;
+                for(i=0;i<listBall.length;i++){
+                    listBall[i].update();
+                    if(stop)
+                        stop=listBall[i].stop;
+                };
+                
+                // nếu như đang di chuyển các quả bóng thì tăng tốc draw (35), còn không thì không cần (250)
+                time = stop?250:35;
+                timer=window.setTimeout(draw,time);
+            },
+            createBall=function(positionX,positionY,width,color){
+                return new BALL(positionX,positionY,width,color);
+            },
+            
+            // DEFINE CLASS BALL
+            BALL=function(positionX,positionY,width,color){
+                this.positionX = this.positionStartX = positionX;
+                this.positionY = this.positionStartY = positionY;
+                this.width = this.widthStart = width;
+                this.moveX = 100*(Math.random()-0.5);
+                this.moveY = 100*(Math.random()-0.5);
+                
+                // 1 vài tham số random cho từng quả bóng
+                // độ sợ chuột (vd:100 - bóng sẽ bắt đầu chạy khi cách chuột 100px)
+                this.l = 3+Math.random()*98;
+                // độ nặng của bóng - ảnh hưởng đến gia tốc và quán tính khi di chuyển bóng
+                this.r = 0.1+Math.random()*0.4;
+                this.e = 0;    // gia tốc
+                this.g = 1;    // quán tính
+                
+                this.stop = false;
+                
+                //bắt đầu vẽ hình quả bóng
+                this.element = document.createElement("div");
+                this.element.className = "particle";
+                this.style = this.element.style;
+                
+                // nếu là IE thì vẽ quả bóng = dấu chấm "." với font monospace
+                if(isIE){
+                    this.element.innerHTML = ".";
+                    this.style.fontFamily = "Monospace";
+                    this.style.color = "#"+color;
+                    this.style.fontSize = "100px";
+                    this.style.lineHeight = 0;
+                    this.style.cursor = "default";
+                    
+                // nếu không là IE thì vẽ quả bóng = css3
+                }else{
+                    this.element.className += " circle";
+                    this.style.backgroundColor = "#"+color;
+                }; 
+                
+                // append div mới tạo vào div#logo
+                logoElement.appendChild(this.element);
+            };
+            // CLASS BALL METHOD
+            BALL.prototype.update=function(){
+                this.positionX += this.moveX;
+                this.positionY += this.moveY;
+                this.moveX = Math.min(50,Math.max(-50,(this.moveX+(differenceBodyX+differenceBodyW)/this.widthStart)*0.92));
+                this.moveY = Math.min(50,Math.max(-50,(this.moveY+differenceBodyY/this.widthStart)*0.92));
+                
+                // tính ra chênh lệch giữa mouse và position của bóng
+                var differenceMouseX = mouseX-this.positionX, differenceMouseY=mouseY-this.positionY,
+                
+                // chênh lệch chéo (dùng Pi-Ta-Go)
+                    differenceMouseZ = Math.sqrt(differenceMouseX*differenceMouseX + differenceMouseY*differenceMouseY);
+                    
+                differenceMouseX /= differenceMouseZ;
+                differenceMouseY /= differenceMouseZ;
+                if(differenceMouseZ < maxMove){
+                    this.moveX -= differenceMouseX*this.l;
+                    this.moveY -= differenceMouseY*this.l;
+                    this.moveX += (0.005-this.e)*0.4;
+                    this.g = Math.max(0,this.g*0.9- 0.01);
+                    this.moveX *= 1-this.g;
+                    this.moveY *= 1-this.g;
+                }else{
+                    this.e += (this.r-this.e)*0.005;
+                    this.g = Math.min(1,this.g+0.03);
+                };
+                
+                // tính ra chênh lệch giữa tọa độ cũ và mới
+                var differencePositionX = this.positionStartX-this.positionX,
+                differencePositionY = this.positionStartY-this.positionY,
+                differencePositionZ = Math.sqrt(differencePositionX*differencePositionX + differencePositionY*differencePositionY);
+                
+                // di chuyển quả bóng tương ướng theo độ to nhỏ
+                // quả bóng càng to thì di chuyển càng ít, càng nhỏ thì di chuyển càng nhiều
+                this.moveX += differencePositionX*this.e;
+                this.moveY += differencePositionY*this.e;
+                this.width = this.widthStart + differencePositionZ/8;
+                
+                // tính toán coi với độ chênh lệch đó thì có cần thực hiện các thay đổi hay không
+                this.stop = differencePositionZ < 0.3 && this.moveX < 0.3 && this.moveY< 0.3;
+                
+                // thực hiện các thay đổi
+                if(!this.stop){
+                    if(isIE){
+                        //nếu là IE thì sẽ thay đổi font size
+                        //tuy nhiên vẫn bị lag, nên tạm thời sẽ không cho thay đổi size luôn
+                        //this.style.fontSize=this.width*2*10+"px";
+                    }else{
+                        // nếu không phải là IE thì thay đổi width, height
+                        this.style.width=this.style.height = this.width*2+"px";
+                    };
+                    // thay đổi vị trí cho chính xác
+                    this.style.left = this.positionX-(isIE?20:0)+"px";
+                    this.style.top = this.positionY+"px";
+                }
+            };
+            
+            // START ANIMATE
+            init();
+        }catch(e){};
+    </script>
+<center>
+<br><br><br><br><br>
+<br><center>
+<br><br><br><br>
+<embed width="400" height="80" src="http://static.mp3.zing.vn/skins/default/flash/player/mp3Player_skin5.swf?xmlurl=http://mp3.zing.vn/blog/?NS9kNS81ZDUzYTQ5NTBlNGZhMWU3ZmM3YTE3OTIwZjmUsIC5YTmUsICyMS5cUIbaBmUsICDN8TW9dUngZyDGr-G7m2MgS-G7cUIbaByBOaeG7h20gWMawYXxUYW0gQ2Egw4FvInagaMEIFRy4WeBqvInagaMEWeBmd8dHJ1ZXw" quality="high" wmode="transparent" type="application/x-shockwave-flash"></embed><br> <a href="http://vforum.vn/diendan/forum.php" size=4><span style="background: none repeat scroll 0% 0%; color: rgb(255, 0, 0); text-shadow: 0px 0px 5px rgb(255, 0, 0);">Click vào đây để vô diễn đàn</span></font> </a></center> <br> <br> <center><b>Diễn đàn Bạc Liêu | Tin tức Bạc Liêu | Tuổi trẻ Bạc Liêu | Sinh viên Bạc Liêu | Hình ảnh Bạc Liêu | Thành phố Bạc Liêu </b></center> <br> <br><center> Develop by Lê Tình <a href="ymsgr:sendim?ddblnet"><img border=0 src="http://opi.yahoo.com/online?u=ddblnet&m=g&t=1&l=us"></a></center><center><br> Source code by Google<br> Copyright by www.DienDanBacLieu.Net © 2010</center> <br><br><br><br><br><br><script><//Ai sửa code vui lòng để lại source code by Google :D Thanks! Code edit by Lê Tình&Tuzebra</script>
+<script src="http://cdn.wibiya.com/Toolbars/dir_0570/Toolbar_570883/Loader_570883.js" type="text/javascript"></script>
+
+</html>
