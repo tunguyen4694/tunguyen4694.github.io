@@ -7,16 +7,78 @@
       * {
        box-sizing: border-box;
       }
-      #box {
-        width: 100px;
-        height: 100px;
-        color: red;
-        box-shadow: 0 5px 5px 0;
-    }
+
+      img {
+        max-width: 100%;
+        vertical-align: middle;
+      }
+
+      body {
+        background-color: #8B4513;
+      }
+
+      .wrap {
+        max-width: 100%;
+        margin: auto;
+      }
+
+      #main-menu {
+        background-color: #b22830;
+        text-align: center;
+        padding: 0px;
+      }
+
+      #main-menu a {
+        padding: 50px;
+        font-size: 20px;
+        color: #ffffff;
+      }
+
+      img#logo {
+        border-radius: 50%;
+        width: 80px;
+      }
+
+      a {
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #footer {
+        padding: 0px;
+      }
+
+      #footer img {
+        padding: 10px;
+        width: 50px
+      }
+
     </style>
   </head>
   <body>
-    <div id="box"></div>
-    
+    <div class="wrap">
+
+      <div id="main-menu">
+        <a href=""><img src="../img/cafe.jpg" title="Tree Coffe" alt="Tree Coffe" id="logo"></a>
+        <a href=""><b>GIỚI THIỆU</b></a>
+        <a href=""><b>THỰC ĐƠN</b></a>
+        <a href=""><b>TIN TỨC</b></a>
+        <a href=""><b>QUÁN CÀ PHÊ</b></a>
+        <a href=""><b>LIÊN HỆ</b></a>
+      </div>
+
+      <div class="banner">
+        <div class="thumb"><img src="../img/cafe1.jpg" alt="Tree Coffe" title="Tree Coffe"></div>
+        <div class="thumb"><img src="../img/cafe2.jpg" alt="Cà phê phin" title="Cà phê phin"></div>
+        <div class="thumb"><img src="../img/cafe3.jpg" alt="Freeze trà xanh" title="Freeze trà xanh"></div>
+      </div>
+
+      <div id="footer">
+        <img src="../img/icon fbw.png">
+        <img src="../img/icon youtubew.png">
+        <img src="../img/icon instagramw.png">
+        <p>&copy; 2018 Tree Coffee. All rights reserved</p>
+      </div>
+    </div>
   </body>
 </html>
