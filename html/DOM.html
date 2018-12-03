@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo</title>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+
+  <div id="wrap">
+  	<div id="doanvan1">
+    <p id="doan1">Hiện nay có một sự hiểu nhầm đã xảy ra. Tuy Đắc Nhân Tâm là tựa sách hầu hết mọi người đều biết đến, vì những danh tiếng và mức độ phổ biến, nhưng một số người lại “ngại” đọc. Lý do vì họ tưởng đây là cuốn sách “dạy làm người” nên có tâm lý e ngại. Có lẽ là do khi giới thiệu về cuốn sách, người ta luôn gắn với miêu tả đây là “nghệ thuật đối nhân xử thế”, “nghệ thuật thu phục lòng người”… Những cụm từ này đã không còn hợp với hiện nay nữa, gây cảm giác xa lạ và không thực tế.</p>
+	</div>
+    </br>
+
+    <div id="doanvan2">
+    <p>Những vấn đề được chỉ ra trong đó đều là căn bản ứng xử giữa người với người. Nếu diễn giải theo từ ngữ bây giờ, có thể gọi đây là “giáo trình” giúp hiểu mình – hiểu người để thành công trong giao tiếp. Có ai sống mà không cần giao tiếp? Có bao nhiêu người ngày ngày mệt mỏi, khổ sở vì gặp phải các vấn đề trong giao tiếp? Vì thế, Đắc Nhân Tâm chính là cuốn sách dành cho mọi người. Con cái nên đọc – cha mẹ càng nên đọc, nhân viên nên đọc – sếp càng nên đọc, người quen nhau nên đọc – người lạ nhau càng nên đọc…. Và đó mới chính thật là lý do Đắc Nhân Tâm luôn lọt vào Top sách bán chạy nhất thế giới, dù đã ra đời cách đây gần 80 năm.</p>
+    </div>
+    </br>
+
+    <div id="doanvan3">
+    <p>Nhưng có lẽ đa số người đọc sẽ thành thật gật gù đồng ý với từng trang sách. Ồ nếu như bình tâm suy xét lại mọi việc, thì trong bất cứ trường hợp nào mình cũng có thể cư xử đúng mực, không làm người khác tổn thương, giúp bầu không khí luôn thoải mái, và thế là cả hai bên đều vui vẻ, công việc cũng vì thế mà suôn sẻ, thành công hơn. Vậy chứ mà cũng không dễ, bởi “cái tôi” của mỗi người thường chiến thắng tâm trí trong đa số trường hợp. Để thỏa mãn nó, chúng ta hay mắc sai lầm không đáng. Đó cũng chính là lý do Đắc Nhân Tâm có mặt, để nhắc nhở và từng chút giúp ta uốn nắn chính “cái tôi” của mình.</p>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+// Document Object Model
+// Bài 1
+  	function changeFontSize(x){
+  		if (x < 0 || parseInt(x)!= x){
+    		console.log('Điều kiện x là số nguyên');
+  		}
+  		else {
+  			document.getElementById("wrap").style.fontSize = x + "px";
+  		}
+	}
+	changeFontSize(30);
+
+
+
+// Bài 2
+	function changeFontSize(x){
+  		if (x < 0 || parseInt(x)!= x){
+    		console.log('Điều kiện x là số nguyên và 0 <= x <= 30');
+		}
+		else if (x < 30){    document.getElementById("wrap").style.fontSize = x + "px";
+		  	document.getElementById("doanvan1").style.fontSize = x + 1 + "px";
+		}
+		else {    document.getElementById("wrap").style.fontSize = x + "px";
+		}
+	}
+	changeFontSize(10);
+
+
+
+// Bài 3
+	function changeFontSize(x){
+  		if (x < 0 || parseInt(x)!= x){
+    		console.log('Điều kiện x là số nguyên và 0 <= x <= 30');
+  		}
+  		else if (x > 10){    
+  			document.getElementById("wrap").style.fontSize = x + "px";
+  			document.getElementById("doanvan1").style.fontSize = x - 1 + "px";
+  		}
+  		else {
+  		    document.getElementById("wrap").style.fontSize = x + "px";
+  		}
+	}
+	changeFontSize(20);	
+
+
+
+// Bài 4
+	function changeColor(){
+ 		document.getElementById("doanvan1").style.color = "green";
+ 		document.getElementById("doanvan2").style.color = "yellow";
+ 		document.getElementById("doanvan3").style.color = "red";
+	}
+	changeColor();
+
+
+
+// Bài 5
+	function changeBgColor(color){
+  		document.body.style.backgroundColor = color;
+	}
+	changeBgColor('#363636');
+
+
+
+// Bài 6
+// function copyContent(){
+//   let a = document.getElementById("doanvan1").innerHTML;
+//   let b = document.getElementById("doanvan2").innerHTML = a;
+// }
+// copyContent()
+	function copyContent(x, y){
+  		let a = document.getElementById(x).innerHTML;
+  		let b = document.getElementById(y).innerHTML = a;
+	}
+	copyContent("doanvan1", "doanvan2");
+
+
+  </script>
+  </body>
+</html>
