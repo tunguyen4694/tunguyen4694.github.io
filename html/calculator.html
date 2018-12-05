@@ -5,7 +5,9 @@
     <meta charset="utf-8" />
     <style>
       h1 {
-        text-align: center;    
+        text-align: center;
+        font-size: 46px;
+        color: #dadddd;
       }
       table {
         margin: auto;
@@ -13,7 +15,8 @@
       }
       .btn {
         width: 68px;
-        height: 52px;
+        height: 46px;
+        font-size: 18px;
       }
       #result {
         width: 280px;
@@ -22,41 +25,41 @@
     </style>
   </head>
 
-  <body>
-    <h1>CALCULATOR</h1>
+  <body background="../img/bg.jpg">
+    <h1>MÁY TÍNH ONLINE</h1>
     <table>
       <tr>
         <td colspan="4"><input id="result" type="text"/></td>
       </tr>
       <tr>
-        <td><input class="btn" type="button" value="a!"</td>
-        <td><input class="btn" type="button" value="&#8730;"></td>
-        <td><input class="btn" type="button" value="%"></td>
-        <td><input class="btn" type="button" value="C"></td>
+        <td><input class="btn" type="button" value="^2" onclick="result.value = Math.pow(result.value,2)"/></td>
+        <td><input class="btn" type="button" value="&#8730;" onclick="result.value = Math.sqrt(result.value)"></td>
+        <td><input class="btn" type="button" value="%" onclick="result.value = result.value/100"></td>
+        <td><input class="btn" type="button" value="C" onclick="result.value =''"/></td>
       </tr>
       <tr>
-        <td><input class="btn" type="button" value="7"></td>
-        <td><input class="btn" type="button" value="8"></td>
-        <td><input class="btn" type="button" value="9"></td>
-        <td><input class="btn" type="button" value="&#247;"></td>
+        <td><input class="btn" type="button" value="7" onclick="result.value+=this.value"/></td>
+        <td><input class="btn" type="button" value="8" onclick="result.value+=this.value"/></td>
+        <td><input class="btn" type="button" value="9" onclick="result.value+=this.value"/></td>
+        <td><input class="btn" type="button" value="/" onclick="result.value+=this.value"/></td>
       </tr>
       <tr>
-        <td><input class="btn" type="button" value="4"></td>
-        <td><input class="btn" type="button" value="5"></td>
-        <td><input class="btn" type="button" value="6"></td>
-        <td><input class="btn" type="button" value="x"></td>
+        <td><input class="btn" type="button" value="4" onclick="result.value+=this.value"/></td>
+        <td><input class="btn" type="button" value="5" onclick="result.value+=this.value"/></td>
+        <td><input class="btn" type="button" value="6" onclick="result.value+=this.value"/></td>
+        <td><input class="btn" type="button" value="*" onclick="result.value+=this.value"/></td>
       </tr>
       <tr>
-        <td><input class="btn" type="button" value="1"></td>
-        <td><input class="btn" type="button" value="2"></td>
-        <td><input class="btn" type="button" value="3"></td>
-        <td><input class="btn" type="button" value="-"></td>
+        <td><input class="btn" type="button" value="1" onclick="result.value+=this.value"/></td>
+        <td><input class="btn" type="button" value="2" onclick="result.value+=this.value"/></td>
+        <td><input class="btn" type="button" value="3" onclick="result.value+=this.value"/></td>
+        <td><input class="btn" type="button" value="-" onclick="result.value+=this.value"/></td>
       </tr>
       <tr>
-        <td><input class="btn" type="button" value="0"></td>
-        <td><input class="btn" type="button" value="."></td>
-        <td><input class="btn" type="button" value="="></td>
-        <td><input class="btn" type="button" value="+"></td>
+        <td><input class="btn" type="button" value="0" onclick="result.value+=this.value"/></td>
+        <td><input class="btn" type="button" value="." onclick="result.value+=this.value"/></td>
+        <td><input class="btn" type="button" value="=" onclick="result.value = eval(result.value)"/></td>
+        <td><input class="btn" type="button" value="+" onclick="result.value+=this.value"/></td>
       </tr>
     </table>
 
